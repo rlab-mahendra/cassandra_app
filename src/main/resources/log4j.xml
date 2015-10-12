@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd" [
+    <!ENTITY STDOUT SYSTEM "/etc/capillary/async/log4j.stdout.xml">
+    <!ENTITY EMAIL SYSTEM "/etc/capillary/async/log4j.email.xml">
+    ]>
+
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+
+    <appender name="LOG" class="org.apache.log4j.DailyRollingFileAppender">
+      <param name="File" value="/Users/pigol/workspace/cassandra/log/inv.log"/>
+        <param name="Append" value="true"/>
+        <param name="DatePattern" value="'.'yyyy-MM-dd-HH"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d{HH:mm:ss.SSS} [%t] (%F:%L) %X{cmri} %X{oid} %X{mid} %c %p - %m%n"/>
+        </layout>
+    </appender>
+
+</log4j:configuration>
